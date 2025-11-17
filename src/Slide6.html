@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 6: Metodologia Frontend (DevX)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-dark: #111827;
+            --bg-card: #1f2937;
+            --text-primary: #F9FAFB;
+            --text-secondary: #9CA3AF;
+            --accent-blue: #2563EB;
+            --border-color: #4B5563;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+        }
+        /* Estilo customizado para o item de tecnologia ativo */
+        .tech-item.active {
+            background-color: var(--accent-blue);
+            color: var(--text-primary);
+        }
+        .tech-item.active svg {
+            color: var(--text-primary);
+        }
+
+        .slide-progress {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 40;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="w-full p-4 shadow-lg" style="background-color: #0a3d7d;">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            
+            <!-- Logo DevX (Lado Esquerdo) -->
+            <div class="flex items-center gap-2">
+                <img src="../Imagens/favicon.png" alt="Logo DevX" class="w-8 h-8">
+                <span class="text-2xl font-bold text-white">DevX</span>
+            </div>
+
+            <!-- Logos da Direita (PI, CONTEEX & FAM) -->
+            <div class="flex items-center gap-6">
+                
+                <!-- LOGO PI 9 -->
+                <div>
+                    <img src="../Imagens/PI9.png" alt="Logo PI9" class="h-12">
+                </div>
+
+                <!-- Logo CONTEEX -->
+                <div class="text-4xl font-bold text-white tracking-tighter">
+                    CONTE<span class="text-cyan-400">EX</span>
+                </div>
+                
+                <!-- Logo FAM -->
+                <div class="flex items-center gap-2">
+                    <span class="text-5xl font-extrabold text-white" style="letter-spacing: -2px;">FAM</span>
+                    <span class="text-xs font-semibold text-white uppercase leading-tight" style="width: 80px;">
+                        Centro Universitário
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-10">
+        <div class="max-w-6xl w-full bg-gray-800 rounded-2xl shadow-2xl flex overflow-hidden border border-gray-700" style="height: 720px;">
+            
+            <!-- Metade Esquerda: Imagem -->
+            <div class="w-1/2 h-full">
+                <img src="../Imagens/workspace.jpg" 
+                     alt="Workspace da DevX" 
+                     class="w-full h-full object-cover">
+            </div>
+
+            <!-- Metade Direita: Conteúdo Interativo -->
+            <div class="w-1/2 h-full bg-gray-800 p-10 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-6">Metodologia (Frontend)</h2>
+                    <h3 class="text-lg text-blue-300 font-semibold mb-6">Uma Experiência Premium e Reativa</h3>
+                    
+                    <!-- Lista de Tecnologias -->
+                    <div class="space-y-3">
+                        <!-- Item 1: Tailwind -->
+                        <a href="#" class="tech-item flex items-center p-4 rounded-lg transition-all duration-200 text-gray-300 hover:bg-gray-700"
+                           data-description="**Tailwind CSS:** É a base de todo o nosso design system. Usámos o Tailwind para construir uma interface coesa e responsiva em toda a plataforma.">
+                            <svg class="w-6 h-6 mr-4 flex-shrink-0 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 0 0 8.11 10.36L9.75 12l-.383 1.135a6 6 0 0 1-1.683 3.256l-.319 1.913m3.976-3.256l.383 1.135a6 6 0 0 0 1.683 3.256l.319 1.913m-3.976-3.256a6 6 0 0 1 3.976 3.256m0 0l.319-1.913a6 6 0 0 0 1.683-3.256L14.25 12l.383-1.135a6 6 0 0 0-1.683-3.256l-.319-1.913m-3.976 3.256a6 6 0 0 1-3.976-3.256m0 0l-.319 1.913A6 6 0 0 0 3.89 8.64L2.25 10.36l.383 1.135a6 6 0 0 0 1.683 3.256l.319 1.913m3.976-3.256l-.383-1.135a6 6 0 0 0-1.683-3.256L6.75 12l-.383 1.135a6 6 0 0 0 1.683 3.256l.319 1.913m3.976 3.256l.383 1.135a6 6 0 0 0 1.683 3.256l.319 1.913m0 0a6 6 0 0 1 3.976 3.256m-3.976-3.256l.319-1.913a6 6 0 0 1 1.683-3.256L14.25 12l.383-1.135a6 6 0 0 1-1.683-3.256l-.319-1.913m3.976 3.256a6 6 0 0 1 3.976-3.256m0 0l-.319 1.913a6 6 0 0 1-1.683 3.256L17.25 12l-.383 1.135a6 6 0 0 1 1.683 3.256l.319 1.913m0 0l.319-1.913a6 6 0 0 0-1.683-3.256L17.25 12l-.383-1.135a6 6 0 0 0 1.683-3.256l.319-1.913M12 2.25l.383 1.135a6 6 0 0 1-1.683 3.256L9 8.64l.319-1.913A6 6 0 0 1 12 2.25ZM12 15.75l-.383 1.135a6 6 0 0 0 1.683 3.256L15 21.36l-.319-1.913A6 6 0 0 0 12 15.75Z" /></svg>
+                            <span class="text-lg font-semibold">Tailwind CSS</span>
+                        </a>
+                        <!-- Item 2: Chart.js -->
+                        <a href="#" class="tech-item flex items-center p-4 rounded-lg transition-all duration-200 text-gray-300 hover:bg-gray-700"
+                           data-description="**Gráficos e Analytics:** Usámos o Chart.js para criar todos os gráficos de barras e 'doughnut' que aparecem nos dashboards de analytics.">
+                            <svg class="w-6 h-6 mr-4 flex-shrink-0 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" /></svg>
+                            <span class="text-lg font-semibold">Chart.js</span>
+                        </a>
+                        <!-- Item 3: Leaflet.js -->
+                        <a href="#" class="tech-item flex items-center p-4 rounded-lg transition-all duration-200 text-gray-300 hover:bg-gray-700"
+                           data-description="**Mapas e Geolocalização:** O Leaflet.js (com a extensão Leaflet.heat) foi usado para renderizar o mapa de geolocalização dos scans de QR code.">
+                            <svg class="w-6 h-6 mr-4 flex-shrink-0 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m0 0v2.25m0-2.25h1.5M9 15h1.5m-1.5 0H5.625c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H15M9 15h1.5" /></svg>
+                            <span class="text-lg font-semibold">Leaflet.js</span>
+                        </a>
+                        <!-- Item 4: AOS & Tilt -->
+                        <a href="#" class="tech-item flex items-center p-4 rounded-lg transition-all duration-200 text-gray-300 hover:bg-gray-700"
+                           data-description="**Animações e Efeitos:** O AOS (Animate On Scroll) cria as animações de 'fade-up' no site público. O Vanilla Tilt cria o efeito 3D interativo nos cards de serviço.">
+                            <svg class="w-6 h-6 mr-4 flex-shrink-0 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" /></svg>
+                            <span class="text-lg font-semibold">AOS & Vanilla Tilt</span>
+                        </a>
+                        <!-- Item 5: DOMPurify -->
+                        <a href="#" class="tech-item flex items-center p-4 rounded-lg transition-all duration-200 text-gray-300 hover:bg-gray-700"
+                           data-description="**Segurança no Frontend:** No chat de IA, o DOMPurify é usado para limpar e sanitizar qualquer resposta HTML vinda da IA, prevenindo ataques de XSS (Cross-Site Scripting).">
+                            <svg class="w-6 h-6 mr-4 flex-shrink-0 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.602-.36-3.112-1.002-4.498A11.959 11.959 0 0 1 12 2.714Z" /></svg>
+                            <span class="text-lg font-semibold">DOMPurify</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Área de Descrição -->
+                <div id="tech-description-container" class="bg-gray-900 border border-gray-700 p-6 rounded-lg min-h-[140px] flex items-center transition-all duration-300">
+                    <p id="tech-description" class="text-gray-300 leading-relaxed"></p>
+                </div>
+
+                <!-- Instruções de Navegação -->
+                <p class="text-center text-sm text-gray-500 mt-4" id="navigation-instruction">
+                    Pressione → para navegar pelas tecnologias
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Progresso do Slide -->
+    <div class="slide-progress">
+        Slide 6/13
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const techItems = document.querySelectorAll('.tech-item');
+            const descriptionEl = document.getElementById('tech-description');
+            const descriptionContainer = document.getElementById('tech-description-container');
+            const navigationInstruction = document.getElementById('navigation-instruction');
+            
+            let currentIndex = 0;
+            const totalItems = techItems.length;
+            
+            // Função para atualizar a descrição
+            function updateDescription(item, index) {
+                techItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                currentIndex = index;
+                
+                const descText = item.dataset.description;
+                const formattedText = descText.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>');
+                
+                descriptionContainer.style.opacity = 0;
+                setTimeout(() => {
+                    descriptionEl.innerHTML = formattedText;
+                    descriptionContainer.style.opacity = 1;
+                }, 150);
+            }
+
+            // --- NAVEGAÇÃO ENTRE SLIDES (BASE CORRETA) ---
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                    // Obtém o nome do arquivo atual
+                    const currentPath = window.location.pathname;
+                    const currentFile = currentPath.split('/').pop();
+                    
+                    let currentSlide;
+                    
+                    if (currentFile === 'Slide6.html') {
+                        currentSlide = 6;
+                    } else {
+                        const slideMatch = currentFile.match(/Slide(\d+)\.html/);
+                        currentSlide = slideMatch ? parseInt(slideMatch[1]) : 1;
+                    }
+                    
+                    const nextSlideURL = `Slide${(currentSlide === 13 ? 1 : currentSlide + 1)}.html`;
+                    const prevSlideURL = `Slide${(currentSlide === 1 ? 13 : currentSlide - 1)}.html`;
+
+                    // --- Lógica da Navegação Sequencial ---
+                    if (e.key === 'ArrowRight') {
+                        if (currentIndex < totalItems - 1) {
+                            // Avança para próximo tópico
+                            currentIndex++;
+                            updateDescription(techItems[currentIndex], currentIndex);
+                            
+                            // Atualiza instrução no último item
+                            if (currentIndex === totalItems - 1) {
+                                navigationInstruction.textContent = 'Pressione → para ir ao próximo slide';
+                            }
+                        } else {
+                            // Último tópico - vai para próximo slide
+                            window.location.href = nextSlideURL;
+                        }
+                        
+                    } else if (e.key === 'ArrowLeft') {
+                        if (currentIndex > 0) {
+                            // Volta para tópico anterior
+                            currentIndex--;
+                            updateDescription(techItems[currentIndex], currentIndex);
+                            navigationInstruction.textContent = 'Pressione → para navegar pelas tecnologias';
+                        } else {
+                            // Primeiro tópico - vai para slide anterior
+                            window.location.href = prevSlideURL;
+                        }
+                    }
+                }
+            });
+
+            // Clique nos itens (para mobile)
+            techItems.forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentIndex = index;
+                    updateDescription(item, index);
+                    
+                    if (currentIndex === totalItems - 1) {
+                        navigationInstruction.textContent = 'Pressione → para ir ao próximo slide';
+                    }
+                });
+            });
+
+            // Inicializa com o primeiro item
+            if (techItems.length > 0) {
+                updateDescription(techItems[0], 0);
+            }
+        });
+    </script>
+</body>
+</html>

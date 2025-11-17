@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 5: Diagrama da Arquitetura DevX</title>
+    <!-- Carrega a fonte Inter e o Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define as cores exatas do seu style.css */
+        :root {
+            --bg-dark: #111827;
+            --bg-card: #1f2937;
+            --text-primary: #F9FAFB;
+            --text-secondary: #9CA3AF;
+            --accent-blue: #2563EB;
+            --border-color: #4B5563;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+        }
+.slide-progress {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 40;
+}
+    </style>
+</head>
+<!-- ESTRUTURA DO BODY ATUALIZADA -->
+<body class="flex flex-col min-h-screen">
+
+    <!-- HEADER ADICIONADO -->
+    <header class="w-full p-4 shadow-lg" style="background-color: #0a3d7d;">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="../Imagens/favicon.png" alt="Logo DevX" class="w-8 h-8">
+                <span class="text-2xl font-bold text-white">DevX</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <div>
+                    <img src="../Imagens/PI9.png" alt="Logo PI9" class="h-12">
+                </div>
+                <div class="text-4xl font-bold text-white tracking-tighter">
+                    CONTE<span class="text-cyan-400">EX</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-5xl font-extrabold text-white" style="letter-spacing: -2px;">FAM</span>
+                    <span class="text-xs font-semibold text-white uppercase leading-tight" style="width: 80px;">
+                        Centro Universitário
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL (MAIN) ADICIONADO -->
+    <main class="flex-grow flex items-center justify-center p-10">
+        <div class="max-w-6xl w-full bg-gray-800 rounded-2xl shadow-2xl overflow-hidden border border-gray-700 flex flex-col" style="min-height: 760px;">
+            
+            <!-- Título do Slide (Formatado) -->
+            <div class="pt-8 px-12 text-center">
+                <h2 class="text-4xl font-bold text-white mb-2">Diagrama da Arquitetura DevX</h2>
+                <div class="w-48 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mx-auto mb-6"></div>
+            </div>
+
+            <!-- Container do Canvas -->
+            <div class="px-12 pb-12 flex-grow flex items-center justify-center">
+                <!-- O elemento Canvas onde o diagrama será desenhado -->
+                <!-- A classe bg-gray-800 foi removida, o canvas irá pintar o fundo -->
+                <canvas id="architectureCanvas" width="800" height="600" class="rounded-lg"></canvas>
+            </div>
+
+          <div class="slide-progress">Slide 5/13</div>
+
+    <script>
+        window.onload = function() {
+            const displayCanvas = document.getElementById('architectureCanvas');
+            const displayCtx = displayCanvas.getContext('2d');
+
+            // --- Definições de Cor (da sua identidade visual) ---
+            const BG_COLOR = '#1f2937'; // Fundo do canvas (bg-gray-800)
+            const CARD_COLOR = '#1f2937'; 
+            const TEXT_COLOR = '#F9FAFB';
+            const SECONDARY_TEXT_COLOR = '#9CA3AF';
+            const ACCENT_BLUE = '#2563EB';
+            const BORDER_COLOR = '#4B5563';
+            const PARTICLE_COLOR = '#60a5fa'; // Azul claro para as partículas
+
+            // --- ANIMAÇÃO: Definição das Partículas ---
+            let particles = [];
+            const particleSpeed = 0.01; // Velocidade do ciclo
+            let dashOffset = 0; // Para a animação "marching ants"
+
+            // Coordenadas das setas
+            const paths = [
+                { startX: 350, startY: 170, endX: 350, endY: 240 }, // 1. Request
+                { startX: 350, startY: 360, endX: 350, endY: 430 }, // 2. Query
+                { startX: 450, startY: 430, endX: 450, endY: 360 }, // 3. Response
+                { startX: 450, startY: 240, endX: 450, endY: 170 }  // 4. Page
+            ];
+
+            /**
+             * Inicializa as partículas com posições escalonadas
+             */
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < paths.length; i++) {
+                    particles.push({
+                        ...paths[i],
+                        progress: (i / paths.length), // Começa em 0%, 25%, 50%, 75%
+                        speed: particleSpeed
+                    });
+                }
+            }
+
+            /**
+             * ATUALIZADO: Atualiza a posição e desenha as partículas PULSANTES
+             */
+            function updateAndDrawParticles(ctx) {
+                // Efeito de pulsar usando Seno
+                const pulse = Math.abs(Math.sin(Date.now() * 0.005)) * 3 + 3; // Pulsa entre 3 e 6
+                
+                ctx.fillStyle = PARTICLE_COLOR;
+                ctx.shadowColor = PARTICLE_COLOR;
+
+                particles.forEach(p => {
+                    // 1. Atualiza o progresso
+                    p.progress += p.speed;
+                    if (p.progress >= 1) {
+                        p.progress = 0; // Reseta o ciclo
+                    }
+
+                    // 2. Calcula a nova posição (Interpolação Linear)
+                    const x = p.startX + (p.endX - p.startX) * p.progress;
+                    const y = p.startY + (p.endY - p.startY) * p.progress;
+
+                    // 3. Desenha a partícula (agora com raio e brilho pulsantes)
+                    ctx.shadowBlur = pulse * 2;
+                    ctx.beginPath();
+                    ctx.arc(x, y, pulse, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+
+                // Reseta a sombra
+                ctx.shadowColor = 'transparent';
+                ctx.shadowBlur = 0;
+            }
+
+            // ... (Função drawRoundedRect inalterada) ...
+            function drawRoundedRect(ctx, x, y, width, height, radius) {
+                ctx.beginPath();
+                ctx.moveTo(x + radius, y);
+                ctx.lineTo(x + width - radius, y);
+                ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+                ctx.lineTo(x + width, y + height - radius);
+                ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+                ctx.lineTo(x + radius, y + height);
+                ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+                ctx.lineTo(x, y + radius);
+                ctx.quadraticCurveTo(x, y, x + radius, y);
+                ctx.closePath();
+            }
+
+            // ... (Função drawBox inalterada) ...
+            function drawBox(ctx, x, y, width, height, title, subtitle) {
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+                ctx.shadowBlur = 15;
+                ctx.shadowOffsetX = 0;
+                ctx.shadowOffsetY = 5;
+
+                ctx.fillStyle = CARD_COLOR;
+                ctx.strokeStyle = BORDER_COLOR;
+                ctx.lineWidth = 1;
+                drawRoundedRect(ctx, x, y, width, height, 12);
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.shadowColor = 'transparent';
+                ctx.shadowBlur = 0;
+
+                ctx.fillStyle = TEXT_COLOR;
+                ctx.font = 'bold 18px Inter';
+                ctx.textAlign = 'center';
+                ctx.fillText(title, x + width / 2, y + 40);
+
+                ctx.strokeStyle = BORDER_COLOR;
+                ctx.lineWidth = 0.5;
+                ctx.beginPath();
+                ctx.moveTo(x + 20, y + 60);
+                ctx.lineTo(x + width - 20, y + 60);
+                ctx.stroke();
+
+                ctx.fillStyle = SECONDARY_TEXT_COLOR;
+                ctx.font = '14px Inter';
+                ctx.textAlign = 'center';
+                const lines = subtitle.split('\n');
+                lines.forEach((line, index) => {
+                    ctx.fillText(line, x + width / 2, y + 85 + (index * 20));
+                });
+            }
+
+            /**
+             * ATUALIZADO: Função para desenhar setas agora inclui animação de traço
+             */
+            function drawArrow(ctx, fromX, fromY, toX, toY, text, textAlign = 'center', xOffset = 0, lineOffset = 0) {
+                const headlen = 10;
+                const dx = toX - fromX;
+                const dy = toY - fromY;
+                const angle = Math.atan2(dy, dx);
+
+                // --- NOVO: Animação "Marching Ants" ---
+                ctx.setLineDash([10, 10]); // [tamanho do traço, tamanho do espaço]
+                ctx.lineDashOffset = lineOffset;
+                // --- FIM DA NOVIDADE ---
+
+                // Linha
+                ctx.strokeStyle = ACCENT_BLUE;
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(fromX, fromY);
+                ctx.lineTo(toX, toY);
+                ctx.stroke();
+
+                // Ponta da seta (NÃO pode ser tracejada)
+                ctx.setLineDash([]); // Reseta para linha sólida
+                ctx.beginPath();
+                ctx.moveTo(toX, toY);
+                ctx.lineTo(toX - headlen * Math.cos(angle - Math.PI / 6), toY - headlen * Math.sin(angle - Math.PI / 6));
+                ctx.moveTo(toX, toY);
+                ctx.lineTo(toX - headlen * Math.cos(angle + Math.PI / 6), toY - headlen * Math.sin(angle + Math.PI / 6));
+                ctx.stroke();
+
+                // Texto (inalterado)
+                ctx.fillStyle = ACCENT_BLUE;
+                ctx.font = 'bold 12px Inter';
+                ctx.textAlign = textAlign; 
+                ctx.fillText(text, fromX + (dx / 2) + xOffset, fromY + (dy / 2) - 10);
+            }
+
+            /**
+             * ATUALIZADO: drawDiagram agora passa o 'dashOffset' para as setas
+             */
+            function drawDiagram(ctx, canvas, lineOffset) {
+                // 1. Limpa o canvas e define o fundo
+                ctx.fillStyle = BG_COLOR;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // 2. Desenha as caixas principais (inalterado)
+                drawBox(ctx, 200, 50, 400, 120, "Frontend (Browser do Utilizador)", "Vite | Tailwind CSS | Chart.js\nLeaflet.js | Splide.js");
+                drawBox(ctx, 200, 240, 400, 120, "Plataforma Vercel", "Hosting (CDN Global)\nAPI Serverless Functions (Node.js)");
+                drawBox(ctx, 200, 430, 400, 120, "Backend de Dados & Serviços", "Supabase (Auth, DB, Storage)\nServiços Externos (Resend, DeepSeek, Hunter.io)");
+
+                // 3. Desenha as setas de fluxo
+                // As setas que sobem (Resposta) recebem um offset negativo para o fluxo ir na direção certa
+                drawArrow(ctx, 350, 170, 350, 240, "1. Pedido HTTP (Browser)", 'right', -15, lineOffset);
+                drawArrow(ctx, 450, 240, 450, 170, "4. Página (HTML/JS)", 'left', 15, -lineOffset);
+                drawArrow(ctx, 350, 360, 350, 430, "2. Query Segura (Service Role)", 'right', -15, lineOffset);
+                drawArrow(ctx, 450, 430, 450, 360, "3. Resposta (JSON)", 'left', 15, -lineOffset);
+            }
+
+            /**
+             * --- NOVO: Loop de Animação ---
+             */
+            function animate() {
+                // 1. Atualiza o offset do traço da seta
+                dashOffset -= 0.5; // Velocidade do "marching ants"
+                if (dashOffset < -20) { // 20 é a soma de [10, 10]
+                    dashOffset = 0; // Reseta o ciclo
+                }
+
+                // 2. Redesenha o diagrama estático (passando o novo offset)
+                drawDiagram(displayCtx, displayCanvas, dashOffset); 
+                
+                // 3. Atualiza e desenha as partículas animadas
+                updateAndDrawParticles(displayCtx);
+
+                // 4. Pede o próximo frame
+                requestAnimationFrame(animate);
+            }
+
+
+            // --- Lógica do Botão de Download (REMOVIDA) ---
+            
+            // --- INICIALIZAÇÃO ---
+            initParticles(); // Prepara as partículas
+            animate(); // Inicia o loop de animação
+        };
+
+        // --- SCRIPT DE NAVEGAÇÃO ADICIONADO ---
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                const currentPath = window.location.pathname;
+                const currentFile = currentPath.split('/').pop();
+                
+                let currentSlide = 5; // ATUALIZADO PARA 5
+                const totalSlides = 13;
+                
+                const slideMatch = currentFile.match(/Slide(\d+)\.html/i); // 'i' para case-insensitive
+                if (slideMatch && slideMatch[1]) {
+                    currentSlide = parseInt(slideMatch[1]);
+                }
+                
+                if (e.key === 'ArrowRight') {
+                    const nextSlide = currentSlide === totalSlides ? 1 : currentSlide + 1;
+                    window.location.href = `Slide${nextSlide}.html`;
+                    
+                } else if (e.key === 'ArrowLeft') {
+                    const prevSlide = currentSlide === 1 ? totalSlides : currentSlide - 1;
+                    window.location.href = `Slide${prevSlide}.html`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

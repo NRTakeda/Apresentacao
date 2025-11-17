@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 11: Resultados – Gmail Auto DevX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+        }
+
+        .custom-card {
+            background: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(71, 85, 105, 0.5);
+            border-radius: 1rem;
+        }
+
+        .feature-highlight {
+            background: rgba(16, 185, 129, 0.15);
+            border-left: 4px solid #10b981;
+            padding: 14px 16px;
+            border-radius: 0.5rem;
+            margin: 12px 0;
+        }
+
+        .step-badge {
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: #93c5fd;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .slide-progress {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.75);
+            padding: 8px 14px;
+            color: white;
+            border-radius: 20px;
+            z-index: 50;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="w-full p-4 shadow-lg" style="background-color: #0a3d7d;">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="../Imagens/favicon.png" class="w-8 h-8">
+                <span class="text-2xl font-bold text-white">DevX</span>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <img src="../Imagens/PI9.png" class="h-12">
+                <div class="text-4xl font-bold text-white">CONTE<span class="text-cyan-400">EX</span></div>
+                <div class="flex items-center gap-1">
+                    <span class="text-5xl font-extrabold text-white tracking-tighter">FAM</span>
+                    <span class="text-xs text-white uppercase">Centro Universitário</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-10">
+        <div class="max-w-6xl w-full bg-gray-800 rounded-2xl shadow-2xl overflow-hidden border border-gray-700">
+
+            <div class="text-center pt-10">
+                <h1 class="text-4xl font-bold text-white">Automação “Gmail Auto DevX”</h1>
+                <div class="w-48 h-1 bg-gradient-to-r from-green-400 to-cyan-400 mx-auto rounded-full my-4"></div>
+                <p class="text-xl text-gray-300">Otimização do Atendimento ao Cliente</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 p-12">
+
+                <!-- CARD DO FLUXO -->
+                <div class="custom-card p-6 text-white">
+                    <h2 class="text-2xl font-bold mb-4 text-green-400">O que esta automação entrega?</h2>
+
+                    <p class="text-gray-300 mb-6">
+                        Este fluxo reduz drasticamente o tempo de resposta ao cliente, organiza o e-mail
+                        e cria uma comunicação profissional 24h por dia.
+                    </p>
+
+                    <div class="feature-highlight">
+                        <p class="text-green-300 text-sm font-semibold">✓ Respostas rápidas</p>
+                        <p class="text-green-300 text-sm font-semibold">✓ Atendimento padronizado</p>
+                        <p class="text-green-300 text-sm font-semibold">✓ Zero e-mails perdidos</p>
+                    </div>
+
+                    <div class="mt-6 space-y-3">
+                        <span class="step-badge">n8n</span>
+                        <span class="step-badge">IA</span>
+                        <span class="step-badge">Automação</span>
+                        <span class="step-badge">Google Workspace</span>
+                    </div>
+                </div>
+
+                <!-- CARD DA EXPLICAÇÃO DO FLUXO -->
+                <div class="custom-card p-6 text-white">
+
+                    <h3 class="text-xl font-bold text-cyan-400 mb-4">Como funciona o fluxo?</h3>
+
+                    <ul class="text-gray-300 space-y-4 text-lg">
+
+                        <li>
+                            <span class="font-bold text-green-400">1. Gatilho Automático:</span>
+                            O Gmail é verificado a cada 1 minuto em busca de novas mensagens.
+                        </li>
+
+                        <li>
+                            <span class="font-bold text-green-400">2. Classificação Inteligente:</span>
+                            Um <strong>Switch</strong> identifica se é mensagem do sistema ou de um novo cliente.
+                        </li>
+
+                        <li>
+                            <span class="font-bold text-green-400">3. Dupla IA:</span>
+                            Uma IA cria a resposta perfeita enquanto outra IA decide o setor ideal para encaminhamento.
+                        </li>
+
+                        <li>
+                            <span class="font-bold text-green-400">4. E-mail Profissional:</span>
+                            O fluxo monta e envia um e-mail HTML com a identidade visual da DevX.
+                        </li>
+
+                        <li>
+                            <span class="font-bold text-green-400">5. Organização Automática:</span>
+                            O e-mail recebe o label <strong>"Processado"</strong> no Gmail para evitar duplicidade.
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="slide-progress">Slide 11/13</div>
+        </div>
+    </main>
+
+    <script>
+        // Navegação por teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                window.location.href = 'Slide12.html';
+            } else if (e.key === 'ArrowLeft') {
+                window.location.href = 'Slide10.html';
+            }
+        });
+    </script>
+
+</body>
+</html>

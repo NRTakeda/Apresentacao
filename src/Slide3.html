@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 3: Objetivos - Plataforma SaaS Completa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-dark: #111827;
+            --bg-card: #1f2937;
+            --text-primary: #F9FAFB;
+            --text-secondary: #9CA3AF;
+            --accent-blue: #2563EB;
+            --border-color: #4B5563;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+        }
+        
+        .platform-card {
+            background-color: var(--bg-card);
+            border: 1px solid #475569;
+            transition: all 0.3s ease;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            border-color: #60a5fa; /* Cor de hover da sua lógica JS */
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+        
+       .slide-progress {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 40;
+}
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="w-full p-4 shadow-lg" style="background-color: #0a3d7d;">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="../Imagens/favicon.png" alt="Logo DevX" class="w-8 h-8">
+                <span class="text-2xl font-bold text-white">DevX</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <div>
+                    <img src="../Imagens/PI9.png" alt="Logo PI9" class="h-12">
+                </div>
+                <div class="text-4xl font-bold text-white tracking-tighter">
+                    CONTE<span class="text-cyan-400">EX</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-5xl font-extrabold text-white" style="letter-spacing: -2px;">FAM</span>
+                    <span class="text-xs font-semibold text-white uppercase leading-tight" style="width: 80px;">
+                        Centro Universitário
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow flex items-center justify-center p-10">
+        <!-- 
+          *** CORREÇÃO PRINCIPAL ***
+          - Trocado "height: 760px" por "min-height: 760px" para permitir que o card cresça.
+          - Adicionado "flex flex-col" para o layout interno.
+        -->
+        <div class="max-w-6xl w-full bg-gray-800 rounded-2xl shadow-2xl overflow-hidden border border-gray-700 flex flex-col" style="min-height: 760px;">
+            
+            <!-- Título do Slide -->
+            <div class="pt-8 px-12 text-center">
+                <h2 class="text-4xl font-bold text-white mb-2">Objetivos da Plataforma</h2>
+                <div class="w-48 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mx-auto mb-6"></div>
+                <p class="text-xl text-gray-300 font-semibold">
+                    Construir uma <span class="text-blue-400">Plataforma SaaS Completa</span>
+                </p>
+            </div>
+
+            <!-- Grid de Objetivos 
+              - Removido "h-5/6" para permitir crescimento.
+              - Adicionado "flex-grow" para ocupar o espaço.
+            -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 px-12 pb-12 mt-4 flex-grow">
+                
+                <!-- Frontend Público -->
+                <div class="platform-card rounded-xl p-6 text-white">
+                    <!-- ÍCONE SVG (substituindo emoji) -->
+                    <div class="feature-icon text-blue-400" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);">
+                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Frontend Público</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Criar um <span class="font-semibold text-blue-300">funil de vendas de alta performance</span> com um Consultor de IA para captura de leads.
+                    </p>
+                    <!-- LISTA SVG (substituindo .feature-list) -->
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Funil de vendas otimizado</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Consultor de IA integrado</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Captura automatizada de leads</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Landing pages responsivas</li>
+                    </ul>
+                    <div class="mt-4 flex items-center text-blue-400 text-sm">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                            <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="font-semibold">Site Público • Conversão • IA</span>
+                    </div>
+                </div>
+
+                <!-- Portal do Cliente -->
+                <div class="platform-card rounded-xl p-6 text-white">
+                    <div class="feature-icon text-green-400" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">
+                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-green-400 mb-4">Portal do Cliente</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Implementar um <span class="font-semibold text-green-300">Dashboard</span> para o cliente gerir projetos, ficheiros e serviços.
+                    </p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Gestão completa de projetos</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Sistema de arquivos integrado</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Controle de serviços contratados</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Comunicação direta com a equipe</li>
+                    </ul>
+                    <div class="mt-4 flex items-center text-green-400 text-sm">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+                        </svg>
+                        <span class="font-semibold">Dashboard • Gestão • Autonomia</span>
+                    </div>
+                </div>
+
+                <!-- Painel de Admin -->
+                <div class="platform-card rounded-xl p-6 text-white">
+                    <div class="feature-icon text-yellow-400" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-yellow-400 mb-4">Painel de Admin</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Desenvolver um <span class="font-semibold text-yellow-300">Admin</span> para a equipa gerir clientes, aprovar projetos e ver analytics globais.
+                    </p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Gestão centralizada de clientes</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Aprovação de projetos</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Analytics e métricas globais</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Controle de usuários da equipe</li>
+                    </ul>
+                    <div class="mt-4 flex items-center text-yellow-400 text-sm">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="font-semibold">Administração • Controle • Analytics</span>
+                    </div>
+                </div>
+
+                <!-- Segurança -->
+                <div class="platform-card rounded-xl p-6 text-white">
+                    <div class="feature-icon text-red-400" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-red-400 mb-4">Segurança</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Garantir uma plataforma segura com <span class="font-semibold text-red-300">validação de dados, rate limiting e permissões</span>.
+                    </p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Validação rigorosa de dados</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Rate limiting e proteção DDoS</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Sistema de permissões granular</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Criptografia de dados sensíveis</li>
+                    </ul>
+                    <div class="mt-4 flex items-center text-red-400 text-sm">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="font-semibold">Segurança • Compliance • Proteção</span>
+                    </div>
+                </div>
+
+            
+    </main>
+
+            <!-- Progresso --> <!-- ← ADICIONAR AQUI -->
+<div class="slide-progress">Slide 3/13</div>
+
+    <script>
+        // --- NAVEGAÇÃO CÍCLICA ENTRE SLIDES (1-13) ---
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                const currentPath = window.location.pathname;
+                const currentFile = currentPath.split('/').pop();
+                
+                let currentSlide = 3; // Default para este slide
+                const totalSlides = 13;
+                
+                const slideMatch = currentFile.match(/Slide(\d+)\.html/i); // 'i' para case-insensitive
+                if (slideMatch && slideMatch[1]) {
+                    currentSlide = parseInt(slideMatch[1]);
+                }
+                
+                if (e.key === 'ArrowRight') {
+                    const nextSlide = currentSlide === totalSlides ? 1 : currentSlide + 1;
+                    window.location.href = `Slide${nextSlide}.html`;
+                    
+                } else if (e.key === 'ArrowLeft') {
+                    const prevSlide = currentSlide === 1 ? totalSlides : currentSlide - 1;
+                    window.location.href = `Slide${prevSlide}.html`;
+                }
+            }
+        });
+
+        // --- Hover JS Removido ---
+        // O efeito de hover agora é 100% CSS
+    </script>
+</body>
+</html>

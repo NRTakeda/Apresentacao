@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 9: Resultados (Funcionalidades Implementadas)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-dark: #111827;
+            --bg-card: #1f2937;
+            --text-primary: #F9FAFB;
+            --text-secondary: #9CA3AF;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+        }
+
+        .custom-card {
+            background: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(71, 85, 105, 0.5);
+            border-radius: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Para conter os mockups */
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: #93c5fd;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin: 4px 8px 4px 0;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        /* Estilo base do highlight */
+        .feature-highlight {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+        
+        /* Cores específicas por card */
+        .feature-highlight-blue {
+             border-left: 4px solid #3b82f6; /* Azul */
+        }
+        .feature-highlight-green {
+             border-left: 4px solid #10b981; /* Verde */
+        }
+        .feature-highlight-purple {
+             border-left: 4px solid #a855f7; /* Roxo */
+        }
+ .slide-progress {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 40;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header Padrão -->
+    <header class="w-full p-4 shadow-lg" style="background-color: #0a3d7d;">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="../Imagens/favicon.png" alt="Logo DevX" class="w-8 h-8">
+                <span class="text-2xl font-bold text-white">DevX</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <div>
+                    <img src="../Imagens/PI9.png" alt="Logo PI9" class="h-12">
+                </div>
+                <div class="text-4xl font-bold text-white tracking-tighter">
+                    CONTE<span class="text-cyan-400">EX</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-5xl font-extrabold text-white" style="letter-spacing: -2px;">FAM</span>
+                    <span class="text-xs font-semibold text-white uppercase leading-tight" style="width: 80px;">
+                        Centro Universitário
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow flex items-center justify-center p-10">
+        <div class="max-w-6xl w-full bg-gray-800 rounded-2xl shadow-2xl overflow-hidden border border-gray-700 flex flex-col" style="min-height: 760px;">
+            
+            <!-- Área do conteúdo do slide -->
+            <div class="w-full h-full flex flex-col flex-grow">
+                
+                <!-- Cabeçalho do Slide (Atualizado) -->
+                <div class="pt-8 px-12 text-center">
+                    <h2 class="text-4xl font-bold text-white mb-2">Resultados (Funcionalidades Implementadas)</h2>
+                    <div class="w-48 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mx-auto mb-6"></div>
+                    <p class="text-xl text-gray-300 font-semibold">
+                        Uma Plataforma 3-em-1 Funcional
+                    </p>
+                </div>
+
+                <!-- Container do Conteúdo Principal -->
+                <div class="flex-grow px-12 pb-12 mt-6">
+                    
+                    <!-- Layout de 3 Colunas -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-full">
+                        
+                        <!-- Card 1: Consultor de IA -->
+                        <div class="custom-card text-white">
+                            <!-- Mockup Visual (Chat) -->
+                            <div class="bg-gray-900 p-4">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4 text-blue-400">
+                                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-6.857 2.286L12 21l-2.286-6.857L3 12l6.857-2.286L12 3z"></path></svg>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-blue-400">Consultor de IA</h3>
+                                </div>
+                                <!-- Chat Falso -->
+                                <div class="space-y-2">
+                                    <div class="p-2 bg-gray-700 rounded-lg text-sm w-3/4">Olá! Qual é a sua ideia?</div>
+                                    <div class="p-2 bg-blue-600 rounded-lg text-sm w-3/4 ml-auto text-right">Uma app de...</div>
+                                    <div class="p-2 bg-gray-700 rounded-lg text-sm w-3/4">Interessante! Qual...</div>
+                                </div>
+                            </div>
+                            <!-- Conteúdo do Card -->
+                            <div class="p-6 flex flex-col flex-grow">
+                                <p class="text-gray-300 leading-relaxed mb-6 flex-grow">
+                                    Usando a API da DeepSeek, o chat guia o utilizador num funil de 3 passos, desde a ideia até ao botão "Iniciar Projeto".
+                                </p>
+                                <div class="feature-highlight feature-highlight-blue">
+                                    <p class="text-blue-200 text-sm font-semibold">
+                                        <span class="text-blue-400">✓</span> Funil de Vendas de 3 Passos
+                                    </p>
+                                    <p class="text-blue-200 text-sm font-semibold">
+                                        <span class="text-blue-400">✓</span> Qualificação de Leads com IA
+                                    </p>
+                                </div>
+                                <div class="mt-4">
+                                    <span class="tech-badge">DeepSeek</span>
+                                    <span class="tech-badge">IA</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Gestão de Projetos -->
+                        <div class="custom-card text-white">
+                            <!-- Mockup Visual (Kanban) -->
+                            <div class="bg-gray-900 p-4">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mr-4 text-green-400">
+                                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-green-400">Gestão de Projetos</h3>
+                                </div>
+                                <!-- Kanban Falso (CORES ATUALIZADAS) -->
+                                <div class="flex justify-between space-x-2">
+                                    <!-- "A FAZER" (Pending) -> Amarelo -->
+                                    <div class="w-1/3 bg-yellow-900 text-yellow-100 rounded p-2 text-xs font-semibold">
+                                        A FAZER
+                                        <div class="mt-1 p-2 bg-gray-800 rounded text-gray-100">Projeto App</div>
+                                    </div>
+                                    <!-- "EM PROGRESSO" (In Development) -> Índigo -->
+                                    <div class="w-1/3 bg-indigo-900 text-indigo-100 rounded p-2 text-xs font-semibold">
+                                        EM PROGRESSO
+                                        <div class="mt-1 p-2 bg-gray-800 rounded text-gray-100">Website...</div>
+                                    </div>
+                                    <!-- "CONCLUÍDO" (Completed) -> Verde -->
+                                    <div class="w-1/3 bg-green-900 text-green-100 rounded p-2 text-xs font-semibold">
+                                        CONCLUÍDO
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- Conteúdo do Card -->
+                            <div class="p-6 flex flex-col flex-grow">
+                                <p class="text-gray-300 leading-relaxed mb-6 flex-grow">
+                                    O cliente pode solicitar projetos, e o admin pode aprovar, editar, ou rejeitar (disparando um e-mail automático via Nodemailer).
+                                </p>
+                                <div class="feature-highlight feature-highlight-green">
+                                    <p class="text-green-300 text-sm font-semibold">
+                                        <span class="text-green-400">✓</span> Fluxo Cliente <-> Admin
+                                    </p>
+                                    <p class="text-green-300 text-sm font-semibold">
+                                        <span class="text-green-400">✓</span> Notificações por E-mail
+                                    </p>
+                                </div>
+                                <div class="mt-4">
+                                    <span class="tech-badge">Gestão</span>
+                                    <span class="tech-badge">Nodemailer</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Analytics de QR Code -->
+                        <div class="custom-card text-white">
+                            <!-- Mockup Visual (QR + Gráfico) -->
+                            <div class="bg-gray-900 p-4">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mr-4 text-purple-400">
+                                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 6v1m-6.414-1.586l-1-1m1.414-11.414l-1-1M4 12H3m1-6.414l-1 1M4 20v-1m6-10v-1m6 1h2M7.586 7.586l-1 1M3 16v-1m6-6h1m-1 6h1m-1-3h1m6-3h1m-1 6h1m-1-3h1m-3-3h1m-1 6h1m-1-3h1"></path></svg>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-purple-400">Analytics de QR Code</h3>
+                                </div>
+                                <!-- Gráfico Falso -->
+                                <div class="flex justify-between items-end space-x-2 h-20 px-2">
+                                    <div class="w-1/4 bg-purple-500 rounded-t-sm" style="height: 40%"></div>
+                                    <div class="w-1/4 bg-purple-500 rounded-t-sm" style="height: 60%"></div>
+                                    <div class="w-1/4 bg-purple-500 rounded-t-sm" style="height: 30%"></div>
+                                    <div class="w-1/4 bg-purple-500 rounded-t-sm" style="height: 80%"></div>
+                                </div>
+                            </div>
+                             <!-- Conteúdo do Card -->
+                            <div class="p-6 flex flex-col flex-grow">
+                                <p class="text-gray-300 leading-relaxed mb-6 flex-grow">
+                                    A API `api/qr/[slug].js` captura o scan, regista o IP e, em paralelo, usa a API `ip-api.com` para "enriquecer" os dados.
+                                </p>
+                                <div class="feature-highlight feature-highlight-purple">
+                                    <p class="text-purple-200 text-sm font-semibold">
+                                        <span class="text-purple-400">✓</span> Captura de Scan em Tempo Real
+                                    </p>
+                                    <p class="text-purple-200 text-sm font-semibold">
+                                        <span class="text-purple-400">✓</span> Enriquecimento de Dados (Geo IP)
+                                    </p>
+                                </div>
+                                <div class="mt-4">
+                                    <span class="tech-badge">SaaS</span>
+                                    <span class="tech-badge">Serverless API</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- FIM DO SEU CONTEÚDO -->
+
+                </div>
+
+            </div>
+
+             <!-- Progresso do Slide -->
+    <div class="slide-progress">
+        Slide 9/13
+    </div>
+
+    <script>
+        // --- NAVEGAÇÃO CÍCLICA ENTRE SLIDES (1-13) ---
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                // Obtém o nome do arquivo atual
+                const currentPath = window.location.pathname;
+                const currentFile = currentPath.split('/').pop();
+                
+                let currentSlide;
+                
+                // ATUALIZADO PARA Slide9.html
+                if (currentFile.toLowerCase() === 'slide9.html') { 
+                    currentSlide = 9; 
+                } else {
+                    const slideMatch = currentFile.match(/Slide(\d+)\.html/i); // 'i' para case-insensitive
+                    if (slideMatch && slideMatch[1]) {
+                        currentSlide = parseInt(slideMatch[1]);
+                    } else {
+                        currentSlide = 1;
+                    }
+                }
+                
+                if (e.key === 'ArrowRight') {
+                    const nextSlide = currentSlide === 13 ? 1 : currentSlide + 1;
+                    window.location.href = `Slide${nextSlide}.html`;
+                    
+                } else if (e.key === 'ArrowLeft') {
+                    const prevSlide = currentSlide === 1 ? 13 : currentSlide - 1;
+                    window.location.href = `Slide${prevSlide}.html`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
