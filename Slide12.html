@@ -175,7 +175,7 @@
          
     </main>
 
-   <div class="slide-progress">Slide 12/13</div>
+   <div class="slide-progress">Slide 12/16</div>
 
     <script>
         // --- NAVEGAÇÃO CÍCLICA ENTRE SLIDES (1-13) ---
@@ -200,11 +200,11 @@
                 }
                 
                 if (e.key === 'ArrowRight') {
-                    const nextSlide = currentSlide === 13 ? 1 : currentSlide + 1;
+                    const nextSlide = currentSlide === 16 ? 1 : currentSlide + 1;
                     window.location.href = `Slide${nextSlide}.html`;
                     
                 } else if (e.key === 'ArrowLeft') {
-                    const prevSlide = currentSlide === 1 ? 13 : currentSlide - 1;
+                    const prevSlide = currentSlide === 1 ? 16 : currentSlide - 1;
                     window.location.href = `Slide${prevSlide}.html`;
                 }
             }
